@@ -1,0 +1,186 @@
+* {
+    font-family: Verdana, sans-serif;
+}
+
+body {
+    background: #fc9709 url("hintergrund.jpg") fixed;
+    margin: 0;
+}
+
+.innerbody {
+        background: white;
+        width: 90%;
+        margin-left: auto;
+        margin-right:auto;
+        padding: 1.5% 1%;
+        box-shadow: 2px 2px 5px #666666;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+h1, h2 {
+    background-color: #fc9709;
+    color: white;
+    text-align: center;
+    padding: 1%;
+    box-shadow: 2px 2px 5px #666666;
+    text-shadow: 1px 1px 1px #666666;
+    border-radius: 20px/50%;
+    margin-bottom: 35px ;
+}
+
+.game {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, 10vh, 4rem);
+}
+
+.spielanzeige,
+.overlay-text {
+    font-size: clamp(2rem, 10vh, 4rem);
+    font-weight: 900;
+    text-align: center;
+}
+
+.spielfeld {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    max-width: 50%;              
+    max-height: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+}
+
+.feld {
+    background-color: transparent;
+    border: solid 0.2rem black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    aspect-ratio: 1 / 1;
+}
+
+.feld:nth-child(-n + 3) {
+    border-top: none;
+}
+
+.feld:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.feld:nth-child(n + 7) {
+    border-bottom: none;
+}
+
+.feld:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.feld::before, 
+.feld::after {
+    content: "";
+    box-sizing: border-box;
+}
+
+.feld.spieler::before {
+    border: 1rem solid #29a397;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.feld.gegner::before,
+.feld.gegner::after {
+    background-color: #cc0058;
+    width: 1rem;
+    height: 100%;
+}
+
+.feld.gegner::before {
+    transform: translateX(50%) rotate(45deg);
+}
+
+.feld.gegner::after {
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.spielanzeige.spieler,
+.overlay-text.spieler {
+  color: var(--spieler-farbe);
+}
+
+.spielanzeige.gegner,
+.overlay-text.gegner {
+  color: var(--gegner-farbe);
+}
+
+.spielanzeige.spieler ~ .spielfeld .feld:not([disabled]) {
+  cursor: pointer;
+}
+
+.spielanzeige.spieler ~ .spielfeld .feld:not([disabled]):hover::before {
+  opacity: 0.3;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.98);
+  position: fixed;
+  inset: 0;
+  color: #c9cc00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 2vh, 4rem);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay-button {
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: #00ff00;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 2rem/50%;
+  cursor: pointer;
+}
+
+.overlay-button:hover {
+  background-color: #00e600;
+}
+
+.overlay.sichtbar {
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 1.5s;
+}
+
+.back {
+    padding: 5px;
+    background: linear-gradient(#ffe3a6, #ffb44b);
+    box-shadow: 2px 2px 5px #666666;
+    border: solid 3px #000000;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: "Verdana", "Calibri", sans-serif;
+    text-align: center;
+}
+
+.back:hover {
+    box-shadow: 5px 5px 10px #666666;
+    background: black;
+    color: red;
+    border: red 3px solid;
+}

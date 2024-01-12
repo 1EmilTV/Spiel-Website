@@ -1,0 +1,107 @@
+* {
+    font-family: Verdana, sans-serif;
+}
+
+body {
+    background: #fc9709 url("hintergrund.jpg") fixed;
+    margin: 0;
+}
+
+.innerbody {
+    background: white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5% 1%;
+    box-shadow: 2px 2px 5px #666666;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+h1, h2 {
+    background-color: #fc9709;
+    color: white;
+    text-align: center;
+    padding: 1%;
+    box-shadow: 2px 2px 5px #666666;
+    text-shadow: 1px 1px 1px #666666;
+    border-radius: 20px/50%;
+    margin-bottom: 35px;
+}
+
+.buttons {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.back:hover {
+    box-shadow: 5px 5px 10px #666666;
+    background: black;
+    color: red;
+    border: rgb(255, 0, 0) 3px solid;
+}
+
+.back {
+    padding: 5px;
+    background: linear-gradient(#ffe3a6, #ffb44b);
+    box-shadow: 2px 2px 5px #666666;
+    border: solid 3px #000000;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: "Verdana", "Calibri", sans-serif;
+    text-align: center;
+}
+
+.umrechner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eingabefeld {
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+    border: 1px solid #dadada;
+    max-width: 25%;
+}
+
+.umrechner input {
+    border: none;
+    border-bottom: 1px solid #dadada;
+    appearance: textfield;
+}
+
+.umrechner input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.umrechner input:focus {
+    outline: none;
+}
+
+.umrechner input, 
+.umrechner label {
+    padding: 0.5em;
+    text-align: center;
+}
+
+.umrechner * {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 650px) {
+    .umrechner {
+        flex-direction: column;
+    }
+
+    .eingabefeld {
+        max-width: 95%;
+    }
+}

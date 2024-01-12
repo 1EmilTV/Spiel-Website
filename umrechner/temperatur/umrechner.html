@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatureinheiten-Umrechner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="umrechner.js" defer></script>
+</head>
+<body>
+    <div class="innerbody">
+        <h1>
+            <strong>Einheiten-Umrechner</strong>
+        </h1>
+        <h2>
+            <strong>Du hast dich für den Temperatureinheiten-Umrechner entschieden.</strong>
+        </h2>
+        <div class="buttons">
+            <button class="back" onclick="location.href='/umrechner/selector/selector.html'">Zurück</button>
+        </div>
+        <div class="umrechner">
+            <div class="eingabefeld">
+                <input type="number" step="any" id="celsius-eingabefeld">
+                <label for="celsius-eingabefeld">Celsius</label>
+            </div>
+            <div class="gleich">=</div>
+            <div class="eingabefeld">
+                <input type="number" step="any" id="fahrenheit-eingabefeld">
+                <label for="fahrenheit-eingabefeld">Fahrenheit</label>
+            </div>
+            <div class="gleich">=</div>
+            <div class="eingabefeld">
+                <input type="number" step="any" id="kelvin-eingabefeld">
+                <label for="kelvin-eingabefeld">Kelvin</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

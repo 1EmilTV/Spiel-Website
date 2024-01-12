@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liebestester</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="liebestester.js" defer></script>
+</head>
+<body>
+    <div class="innerbody">
+        <h1>
+            <strong>Liebestester</strong>
+        </h1>
+        <h2>
+            <strong>Du hast dich für den Liebestester entschieden. Gebe nun noch zwei Namen ein und die Zauberei beginnt!</strong>
+        </h2>
+        <button class="back" onclick="location.href='/index.html'">Zurück</button>
+        <div class="tester">
+            <div class="eingabefeld">
+                <input type="text" placeholder="Dein Name" id="name1" onchange="löschen()">
+            </div>
+            <div class="result">
+                <p id="ihr"></p>
+                <p class="percent" id="percent"></p>
+                <p id="zsm"></p>
+            </div>
+            <div class="eingabefeld">
+                <input type="text" placeholder="Der andere Name" id="name2" onchange="löschen()">
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="start" id="start">Lasse die Magie beginnen!</button>
+        </div>
+    </div>
+</body>
+</html>
